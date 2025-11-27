@@ -1,0 +1,459 @@
+/* Variáveis */
+:root {
+  --60_color: #f6f6f6;
+  --30_color: #232323;
+  --10_color: #fde4c3;
+  --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+  --transition: all 0.5s ease;
+}
+
+@font-face {
+  font-family: gotham;
+  src: url(../fonts/Gotham-font-family/Gotham/Gotham-Book.otf);
+}
+
+@font-face {
+  font-family: gotham-light;
+  src: url(../fonts/Gotham-font-family/Gotham/Gotham-Light.otf);
+}
+@font-face {
+  font-family: gotham-medium;
+  src: url(../fonts/Gotham-font-family/Gotham/Gotham-Medium.otf);
+}
+@font-face {
+  font-family: gotham-bold;
+  src: url(../fonts/Gotham-font-family/Gotham/Gotham-Bold.otf);
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+.h1 {
+  font-family: gotham-medium;
+}
+
+h2,
+h3,
+h4,
+h5,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: gotham;
+}
+
+.p,
+p {
+  font-family: gotham;
+  color: silver;
+}
+
+.theme-shadow {
+  box-shadow: var(--box-shadow);
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+
+/* SPINNER */
+.spinner-wrapper{
+  background-color: var(--30_color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.spinner-border{
+  width: 60px;
+  height: 60px;
+  color: var(--10_color);
+}
+
+/* Navbar */
+.navbar {
+  font-family: gotham-light;
+  white-space: nowrap;
+  background-color: var(--30_color);
+  box-shadow: var(--box-shadow);
+}
+
+.navbar #logo-lg {
+  margin-top: -1%;
+  margin-bottom: -1%;
+  margin-left: -4%;
+}
+
+.navbar .nav-link {
+  text-transform: uppercase;
+}
+
+.navbar .nav-item:hover{
+  font-family: gotham-medium;
+  transition: var(--transition);
+}
+
+.nav-item:hover {
+  color: var(--10_color);
+}
+
+.contato h2 {
+  font-family: gotham-medium;
+  color: var(--30_color);
+}
+
+.navbar .bi {
+  color: var(--60_color);
+}
+
+.navbar .social-icon {
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  display: flex;
+}
+
+.navbar .social-icon a {
+  width: 3.5em;
+  height: 3.5em;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 12px;
+  padding: 0;
+  position: relative;
+}
+
+.navbar .social-icon a .bi {
+  font-size: 1.8em;
+}
+
+.navbar .social-icon a:hover {
+  transition: transform 0.5s ease;
+  border: 2px solid var(--10_color);
+  transform: scale(1.2);
+  color: var(--10_color);
+}
+.navbar .social-icon a:hover .bi{
+  color: var(--10_color);
+}
+
+/* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  color: var(--60_color);
+  font-family: gotham-light;
+  font-size: 2em;
+  padding: 100px 0;
+}
+
+.hero h1,
+.h5 {
+  z-index: 2;
+  font-family: gotham-bold;
+  color: var(--60_color);
+}
+
+.hero {
+  background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(20, 20, 20, 1)),
+    url(../images/hero-header.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.hero .btn {
+  color: var(--60_color);
+}
+
+.hero .btn:hover {
+  color: var(--30_color);
+}
+
+#inicio .subtitle{
+  font-family: gotham-light;
+  color: var(--60_color);
+  font-size: 2.2vh;
+}
+
+
+/* SECTION  */
+
+section {
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.section-title {
+  margin-bottom: 40px;
+}
+
+.section-title .line {
+  width: 60px;
+  height: 4px;
+  background-color: var(--30_color);
+  margin: 16px auto 24px auto;
+}
+
+.section-title p {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about_us {
+  text-align: justify;
+}
+
+
+/* Serviços */
+.service {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.service::after {
+  content: "";
+  width: 0px; /* Valor original: 40px */
+  height: 0px; /* Valor original: 40px */
+  background-color: var(--30_color);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: var(--transition);
+}
+
+.service:hover::after {
+  width: 100%;
+  height: 100%;
+  background-color: var(--30_color);
+  z-index: -1;
+}
+
+.service:hover,
+.service:hover i{
+  transform: all 1s;
+  color: var(--10_color);
+}
+
+
+/* CONTATO */
+
+#contato {
+  background-color: var(--30_color);
+}
+
+#contato::after {
+  content: "";
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#contato h1,
+#contato p {
+  color: var(--10_color);
+}
+
+#contato .line {
+  width: 60px;
+  height: 4px;
+  background-color: var(--10_color);
+  margin: 16px auto 24px auto;
+}
+
+#contato {
+  position: relative;
+  z-index: 2;
+}
+
+#contato input,
+#contato textarea {
+  background-color: var(--30_color);
+}
+
+#contato p {
+  font-family: gotham-light;
+  color: var(--60_color);
+}
+
+/* #contato .form-control{
+  border-radius: 0;
+} */
+
+#contato .form-control:focus {
+  border-color: var(--10_color);
+}
+
+#contato .btn {
+  background-color: var(--30_color);
+  border-color: var(--60_color);
+  color: var(--60_color);
+}
+
+#contato .btn:hover {
+  color: var(--30_color);
+  background-color: var(--10_color);
+}
+
+#contato:placeholder-shown {
+  color: var(--60_color);
+}
+
+#contato h1{
+  font-family: gotham-bold;
+  color: var(--10_color);
+}
+
+
+/* FOOTER */
+footer a {
+  color: var(--30_color);
+}
+
+footer ul,
+.service ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .line {
+  width: 40px;
+  height: 4px;
+  background-color: var(--30_color);
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+footer h5 {
+  font-family: gotham-bold;
+}
+
+footer {
+  padding-top: 100px;
+}
+
+footer a:hover,
+ul p:hover {
+  color: var(--10_color);
+  transition: var(--transition);
+}
+
+.footer-top #img {
+  margin-top: -3.4%;
+}
+
+.footer-top .img {
+  position: relative;
+  bottom: -10%;
+}
+
+.footer-top #nome {
+  font-family: gotham;
+}
+
+.footer-top {
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#footer .social-icons {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer .social-icons .bi {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  font-size: 20px; 
+}
+
+#footer .social-icons a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  border: 2px solid var(--30_color);
+  padding: 0; 
+  position: relative; 
+}
+
+#footer .social-icons a:hover {
+  transition: var(--transition);
+  border: 2px solid var(--10_color);
+  transform: scale(1.3);
+}
+
+#footer .social-icons a:hover .bi {
+  transition: var(--transition);
+  color: var(--10_color);
+}
+
+
+/* Botão Flutuante Whatsapp */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 4vh;
+  right: 4vh;
+  background-color: #25d366; 
+  color: #fff;
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%; 
+  box-shadow: var(--box-shadow); 
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease; 
+}
+
+.whatsapp-btn:hover {
+  background-color: #128c7e; 
+  transform: scale(1.1); 
+}
+
+.whatsapp-btn i {
+  font-size: 28.8px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
